@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stone River Tech | Commercial Security & Low Voltage Solutions | Genesee County, MI</title>
+<meta name="description" content="Stone River Tech provides commercial security camera systems, access control, structured cabling, and network solutions in Genesee County and Mid-Michigan. NDAA compliant. DW Spectrum authorized.">
+<meta name="keywords" content="security cameras Flint MI, access control Genesee County, structured cabling Michigan, DW Spectrum installer, NDAA compliant cameras, low voltage contractor, commercial security Flushing MI">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #0f1420;
+  --bg-card: #141a28;
+  --bg-card-hover: #1a2236;
+  --border: #1e2a3e;
+  --border-accent: #2a5cff;
+  --text-primary: #e8ecf4;
+  --text-secondary: #7a8ba8;
+  --text-muted: #4a5a74;
+  --accent: #2a5cff;
+  --accent-glow: rgba(42, 92, 255, 0.15);
+  --accent-secondary: #00d4aa;
+  --accent-warn: #ff6b35;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== GRID BACKGROUND ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    linear-gradient(rgba(42, 92, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 92, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== UTILITY ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.nav-logo {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: #3d6fff; transform: translateY(-1px); }
+
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--text-secondary); margin: 5px 0; transition: 0.3s; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+}
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  top: 10%;
+  right: -10%;
+  pointer-events: none;
+}
+.hero-content { max-width: 720px; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-secondary);
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.6s ease both;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent-secondary);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+.hero h1 .accent { color: var(--accent); }
+.hero h1 .line { display: block; }
+.hero-sub {
+  font-size: 1.12rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-primary:hover { background: #3d6fff; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(42, 92, 255, 0.3); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-secondary:hover { border-color: var(--text-secondary); background: var(--bg-card); }
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+.stat-item { }
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.03em;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SERVICES ===== */
+.services { padding: 120px 0; }
+.services h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.services-intro {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: 64px;
+  font-size: 1.05rem;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(42, 92, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+.service-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+}
+.service-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  background: rgba(42, 92, 255, 0.08);
+  border: 1px solid rgba(42, 92, 255, 0.15);
+  border-radius: 4px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+/* ===== WHY / DIFFERENTIATORS ===== */
+.why { padding: 120px 0; border-top: 1px solid var(--border); }
+.why h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 64px;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+.why-item {
+  display: flex;
+  gap: 20px;
+}
+.why-num {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(42, 92, 255, 0.2);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 48px;
+}
+.why-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.why-item p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* ===== COMPLIANCE BANNER ===== */
+.compliance {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.compliance-inner {
+  background: linear-gradient(135deg, var(--bg-card), rgba(42, 92, 255, 0.05));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.compliance-text h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.compliance-text p {
+  color: var(--text-secondary);
+  max-width: 520px;
+  font-size: 0.92rem;
+}
+.compliance-badges {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.compliance-badge {
+  padding: 12px 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  text-align: center;
+}
+.compliance-badge .label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.compliance-badge .value {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  color: var(--accent-secondary);
+}
+
+/* ===== SERVICE AREA ===== */
+.area { padding: 120px 0; }
+.area h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.area-sub {
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+  max-width: 540px;
+  font-size: 1.05rem;
+}
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.area-chip {
+  padding: 10px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.area-chip:hover { border-color: var(--accent); color: var(--text-primary); }
+.area-chip.primary { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+
+/* ===== CONTACT ===== */
+.contact {
+  padding: 120px 0;
+  border-top: 1px solid var(--border);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.contact h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.contact-sub {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.contact-info { display: flex; flex-direction: column; gap: 24px; }
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact-row-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(42, 92, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.contact-row-text .label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.contact-row-text .value {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.contact-row-text a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-row-text a:hover { color: var(--accent); }
+
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.form-group input, .form-group textarea, .form-group select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color: var(--accent);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group select option { background: var(--bg-card); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-left {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.footer-right {
+  display: flex;
+  gap: 24px;
+}
+.footer-right a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+.footer-right a:hover { color: var(--text-primary); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    padding: 24px;
+    gap: 20px;
+  }
+  .hero-stats { gap: 24px; flex-wrap: wrap; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .compliance-inner { padding: 32px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-logo">stone<span>river</span>tech</a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">NDAA / TAA Compliant Systems</div>
+      <h1>
+        <span class="line">Commercial Security</span>
+        <span class="line">& Low Voltage</span>
+        <span class="line"><span class="accent">Solutions.</span></span>
+      </h1>
+      <p class="hero-sub">
+        IP surveillance, access control, structured cabling, and network infrastructure for commercial properties across Mid-Michigan. Built right. Configured right. Supported right.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request a Site Survey →</a>
+        <a href="#services" class="btn-secondary">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value">10+</div>
+          <div class="stat-label">Years in Technology</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">NDAA</div>
+          <div class="stat-label">Compliant Hardware</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">$0</div>
+          <div class="stat-label">Monthly Software Fees</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-tag">What We Do</div>
+    <h2>Integrated Security & Infrastructure</h2>
+    <p class="services-intro">End-to-end commercial systems — from the cable in the wall to the interface on your screen. One contractor. One point of accountability.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📹</div>
+        <h3>IP Surveillance Systems</h3>
+        <p>High-resolution commercial camera systems with enterprise video management. On-site recording with secure remote access from any device — no monthly cloud fees.</p>
+        <div class="service-tags">
+          <span class="service-tag">DW Spectrum IPVMS</span>
+          <span class="service-tag">MEGApix 4K</span>
+          <span class="service-tag">LPR Cameras</span>
+          <span class="service-tag">NVR / CaaS</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔐</div>
+        <h3>Access Control</h3>
+        <p>Card-based and credential-managed door access for commercial facilities. Control who enters, when they enter, and maintain a complete audit trail.</p>
+        <div class="service-tags">
+          <span class="service-tag">Kantech</span>
+          <span class="service-tag">HID Readers</span>
+          <span class="service-tag">Electric Strikes</span>
+          <span class="service-tag">Mag Locks</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔌</div>
+        <h3>Structured Cabling</h3>
+        <p>CAT6/6A infrastructure for data, voice, and security systems. Clean runs, proper termination, tested and labeled to commercial standards.</p>
+        <div class="service-tags">
+          <span class="service-tag">CAT6 / CAT6A</span>
+          <span class="service-tag">Patch Panels</span>
+          <span class="service-tag">Cable Management</span>
+          <span class="service-tag">Testing</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Network Configuration</h3>
+        <p>The part other installers can't do. Managed switch configuration, VLAN segmentation for security devices, PoE deployment, and remote access setup — without compromising your network.</p>
+        <div class="service-tags">
+          <span class="service-tag">VLAN Config</span>
+          <span class="service-tag">PoE Switching</span>
+          <span class="service-tag">Remote Access</span>
+          <span class="service-tag">Firewall Rules</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-tag">Why Stone River Tech</div>
+    <h2>We install it and configure it.</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div>
+          <h3>IT Background. Not Just a Cable Puller.</h3>
+          <p>Most low-voltage contractors can mount a camera and crimp a connector. We configure the managed switch, segment the VLANs, set up the NVR for secure remote access, and troubleshoot network issues that other installers can't diagnose. You hire one company instead of two.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div>
+          <h3>No Subscriptions. No Monthly Fees.</h3>
+          <p>We deploy DW Spectrum IPVMS — a one-time perpetual license with no annual renewal. Your system is yours. No recurring cloud fees, no vendor lock-in, no price increases. Full remote access included through DW Cloud at no extra charge.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div>
+          <h3>NDAA Compliant Hardware</h3>
+          <p>Every camera and recorder we install meets NDAA Section 889 requirements. Safe for government buildings, schools, contractors with federal work, and any facility that takes cybersecurity seriously. No banned components. No compromised firmware.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div>
+          <h3>Clean Work. Labeled. Documented.</h3>
+          <p>Every cable labeled at both ends. Every port documented. Every system handed over with credentials, network diagrams, and a client walkthrough. When you need service in two years, we can identify everything instantly — and so can you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="compliance">
+  <div class="container">
+    <div class="compliance-inner">
+      <div class="compliance-text">
+        <h3>Built on Trusted Platforms</h3>
+        <p>We partner with industry-leading manufacturers to deliver reliable, secure, and future-proof systems for every installation.</p>
+      </div>
+      <div class="compliance-badges">
+        <div class="compliance-badge">
+          <div class="label">Surveillance</div>
+          <div class="value">Digital Watchdog</div>
+        </div>
+        <div class="compliance-badge">
+          <div class="label">VMS Platform</div>
+          <div class="value">DW Spectrum</div>
+        </div>
+        <div class="compliance-badge">
+          <div class="label">Access Control</div>
+          <div class="value">Kantech</div>
+        </div>
+        <div class="compliance-badge">
+          <div class="label">Compliance</div>
+          <div class="value">NDAA §889</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area" id="area">
+  <div class="container">
+    <div class="section-tag">Coverage</div>
+    <h2>Serving Mid-Michigan</h2>
+    <p class="area-sub">Based in Flushing, serving commercial properties throughout Genesee County and the surrounding region.</p>
+    <div class="area-list">
+      <div class="area-chip primary">Flushing</div>
+      <div class="area-chip primary">Flint</div>
+      <div class="area-chip">Grand Blanc</div>
+      <div class="area-chip">Burton</div>
+      <div class="area-chip">Davison</div>
+      <div class="area-chip">Clio</div>
+      <div class="area-chip">Swartz Creek</div>
+      <div class="area-chip">Linden</div>
+      <div class="area-chip">Fenton</div>
+      <div class="area-chip">Lapeer</div>
+      <div class="area-chip">Saginaw</div>
+      <div class="area-chip">Bay City</div>
+      <div class="area-chip">Owosso</div>
+      <div class="area-chip">Lansing</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-tag">Get Started</div>
+        <h2>Request a Free Site Survey</h2>
+        <p class="contact-sub">Tell us about your facility and what you're looking to accomplish. We'll schedule a walkthrough, assess your needs, and provide a detailed proposal — no obligation, no pressure.</p>
+        <div class="contact-info">
+          <div class="contact-row">
+            <div class="contact-row-icon">📞</div>
+            <div class="contact-row-text">
+              <div class="label">Phone</div>
+              <div class="value"><a href="tel:+18105551234">(810) 555-1234</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">✉️</div>
+            <div class="contact-row-text">
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:info@stonerivertech.com">info@stonerivertech.com</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">🕐</div>
+            <div class="contact-row-text">
+              <div class="label">Availability</div>
+              <div class="value">Evenings & Weekends by Appointment</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">📍</div>
+            <div class="contact-row-text">
+              <div class="label">Based In</div>
+              <div class="value">Flushing, Michigan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company" placeholder="Business name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="you@company.com">
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="(810) 555-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select name="service">
+            <option value="">Select a service...</option>
+            <option value="surveillance">Surveillance / Camera System</option>
+            <option value="access-control">Access Control</option>
+            <option value="cabling">Structured Cabling</option>
+            <option value="network">Network Configuration</option>
+            <option value="multiple">Multiple Services</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Details</label>
+          <textarea name="message" placeholder="Tell us about your facility, what you need, and any timeline considerations..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="justify-content: center;">Submit Request →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-left">© 2026 Stone River Tech — Stone River LLC — Flushing, MI</div>
+    <div class="footer-right">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL ANIMATIONS -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.service-card, .why-item, .compliance-inner').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelector('.nav-links')?.classList.remove('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
