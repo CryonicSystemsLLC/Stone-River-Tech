@@ -233,7 +233,7 @@ nav .container {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 140px 0 100px;
+  padding: 140px 80px 100px;
   position: relative;
 }
 .hero-glow {
@@ -245,7 +245,8 @@ nav .container {
   right: -10%;
   pointer-events: none;
 }
-.hero-content { max-width: 100%; }
+.hero-content { max-width: 100%; width: 100%; }
+.hero .container { max-width: 100%; padding: 0; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -272,26 +273,26 @@ nav .container {
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  font-size: clamp(3.5rem, 8vw, 8rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.05;
   letter-spacing: -0.03em;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
   animation: fadeInUp 0.6s ease 0.1s both;
 }
 .hero h1 .accent { color: var(--accent); }
 .hero h1 .line { display: block; }
 .hero-sub {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--text-secondary);
   line-height: 1.75;
-  max-width: 800px;
-  margin-bottom: 52px;
+  max-width: 100%;
+  margin-bottom: 56px;
   animation: fadeInUp 0.6s ease 0.2s both;
 }
 .hero-actions {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
   animation: fadeInUp 0.6s ease 0.3s both;
 }
@@ -330,7 +331,8 @@ nav .container {
 
 .hero-stats {
   display: flex;
-  gap: 72px;
+  justify-content: space-between;
+  gap: 40px;
   margin-top: 80px;
   padding-top: 48px;
   border-top: 1px solid var(--border);
@@ -340,14 +342,14 @@ nav .container {
 .stat-item { }
 .stat-value {
   font-family: var(--font-mono);
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 .stat-label {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 8px;
   letter-spacing: 0.03em;
 }
 
@@ -771,8 +773,7 @@ footer .container {
     <div class="hero-content">
       <h1>
         <span class="line">Commercial Security</span>
-        <span class="line">& Low Voltage</span>
-        <span class="line"><span class="accent">Solutions.</span></span>
+        <span class="line">& Low Voltage <span class="accent">Solutions.</span></span>
       </h1>
       <p class="hero-sub">
         IP surveillance, access control, structured cabling, and network infrastructure for commercial properties across Michigan. Built right. Configured right. Supported right.
