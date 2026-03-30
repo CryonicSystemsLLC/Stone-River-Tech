@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <title>Stone River Tech | Commercial Security Cameras, Access Control & Low Voltage | Mid & Southern Michigan</title>
 <meta name="description" content="Stone River Tech installs commercial security camera systems, access control, structured cabling, and network infrastructure across Mid and Southern Michigan. NDAA compliant DW Spectrum systems. No monthly fees. Based in Flushing, MI.">
 <meta name="keywords" content="security cameras Michigan, commercial security camera installation, access control Michigan, structured cabling contractor, DW Spectrum installer Michigan, NDAA compliant cameras, low voltage contractor Michigan, security cameras Flint MI, security cameras Lansing MI, security cameras Ann Arbor MI, access control Detroit MI, commercial surveillance Michigan, Kantech installer, IP camera installation, network cabling Michigan, security system installer near me">
@@ -922,8 +926,7 @@ footer .container {
 <section class="area" id="area">
   <div class="container">
     <div class="section-tag">Coverage</div>
-    <h2>100-Mile Radius from Flint, MI</h2>
-    <p class="area-sub">Based in Flushing. We'll drive up to two hours for your project. That puts most of Michigan's Lower Peninsula in our service area.</p>
+    <h2>Our Service Area</h2>
     <div class="area-layout">
       <div class="area-map">
         <div id="service-map"></div>
@@ -1144,7 +1147,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Leaflet Map - 100 mile radius from Flint
 const map = L.map('service-map', {
   center: [43.0631, -83.8519],
-  zoom: 6,
+  zoom: 7,
   zoomControl: false,
   attributionControl: false,
   scrollWheelZoom: false
@@ -1160,17 +1163,26 @@ L.control.attribution({ position: 'bottomright', prefix: false }).addTo(map).add
 // Force map to recalculate size
 setTimeout(function() { map.invalidateSize(); }, 200);
 
-// 100-mile radius circle (100 miles = 160,934 meters)
-map.createPane('radiusPane');
-map.getPane('radiusPane').style.zIndex = 450;
-L.circle([43.0631, -83.8519], {
-  radius: 160934,
-  pane: 'radiusPane',
+// 100-mile radius circle as polygon (L.circle can fail at large radii)
+function createCirclePolygon(lat, lng, radiusMeters, points) {
+  var coords = [];
+  for (var i = 0; i < points; i++) {
+    var angle = (i / points) * 2 * Math.PI;
+    var dx = radiusMeters * Math.cos(angle);
+    var dy = radiusMeters * Math.sin(angle);
+    var newLat = lat + (dy / 111320);
+    var newLng = lng + (dx / (111320 * Math.cos(lat * Math.PI / 180)));
+    coords.push([newLat, newLng]);
+  }
+  return coords;
+}
+var circleCoords = createCirclePolygon(43.0631, -83.8519, 160934, 80);
+L.polygon(circleCoords, {
   color: '#5a9fff',
-  weight: 3,
+  weight: 2.5,
   opacity: 1,
   fillColor: '#3a7cff',
-  fillOpacity: 0.15
+  fillOpacity: 0.12
 }).addTo(map);
 
 // Flint marker - home base
