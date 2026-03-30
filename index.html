@@ -609,6 +609,139 @@ nav .container {
   .area-map { position: static; }
 }
 
+/* ===== HOW IT WORKS ===== */
+.process { padding: 120px 0; border-top: 1px solid var(--border); }
+.process h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.process-intro {
+  color: var(--text-secondary);
+  max-width: 760px;
+  margin-bottom: 64px;
+  font-size: 1.05rem;
+}
+.process-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+.process-step {
+  flex: 1;
+  padding: 32px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+.process-step:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.process-num {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(42, 92, 255, 0.2);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.process-step h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.process-step p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.process-connector {
+  width: 48px;
+  min-width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  align-self: center;
+  margin-top: -20px;
+}
+@media (max-width: 768px) {
+  .process-grid { flex-direction: column; gap: 16px; }
+  .process-connector { width: 2px; height: 32px; min-width: 2px; align-self: center; margin-top: 0; }
+}
+
+/* ===== INDUSTRIES ===== */
+.industries { padding: 120px 0; border-top: 1px solid var(--border); }
+.industries h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.industries-intro {
+  color: var(--text-secondary);
+  max-width: 760px;
+  margin-bottom: 64px;
+  font-size: 1.05rem;
+}
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.industry-card {
+  padding: 28px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+.industry-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+.industry-icon { font-size: 1.5rem; margin-bottom: 14px; }
+.industry-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.industry-card p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* ===== PROJECTS ===== */
+.projects { padding: 120px 0; border-top: 1px solid var(--border); }
+.projects h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+.project-placeholder {
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 64px 48px;
+  text-align: center;
+  max-width: 700px;
+}
+.project-placeholder-icon { font-size: 2.5rem; margin-bottom: 16px; }
+.project-placeholder p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.projects-cta {
+  margin-top: 32px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 /* ===== CONTACT ===== */
 .contact {
   padding: 120px 0;
@@ -855,6 +988,37 @@ footer .container {
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="process">
+  <div class="container">
+    <div class="section-tag">How It Works</div>
+    <h2>Three Steps to a Secured Facility</h2>
+    <p class="process-intro">No pressure. No obligation. Just a straightforward path from "I need cameras" to a fully operational system.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3>Free Site Survey</h3>
+        <p>We walk your facility, assess coverage needs, identify mounting points, and evaluate your existing network infrastructure. You get a clear picture of what's needed before you spend a dime.</p>
+      </div>
+      <div class="process-connector"></div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3>Custom Proposal</h3>
+        <p>You receive a detailed proposal with specific equipment, a line-item breakdown, a project timeline, and a fixed price. No hidden fees. No surprises. No subscription lock-in.</p>
+      </div>
+      <div class="process-connector"></div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3>Professional Installation</h3>
+        <p>We install, configure, test, label, and document everything. You get a full walkthrough, all system credentials, and a one-year labor warranty. Your facility is secured.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="#contact" class="btn-primary">Schedule a Free Site Survey →</a>
+    </div>
+  </div>
+</section>
+
 <!-- WHY US -->
 <section class="why" id="why">
   <div class="container">
@@ -920,6 +1084,62 @@ footer .container {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries">
+  <div class="container">
+    <div class="section-tag">Industries We Serve</div>
+    <h2>Built for Your Environment</h2>
+    <p class="industries-intro">Every facility has different security challenges. We design systems around how your business actually operates — not the other way around.</p>
+    <div class="industries-grid">
+      <div class="industry-card">
+        <div class="industry-icon">🏭</div>
+        <h3>Warehouses & Manufacturing</h3>
+        <p>Loading docks, perimeter coverage, production floor monitoring, and access-controlled restricted areas. Hardened cameras for dust, vibration, and extreme temps.</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏢</div>
+        <h3>Office Buildings</h3>
+        <p>Lobby and entrance monitoring, floor-by-floor access control, visitor management, and structured cabling for voice and data throughout the building.</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏘️</div>
+        <h3>Property Management</h3>
+        <p>Multi-site camera systems managed from a single dashboard. Common area coverage, parking lot monitoring, and tenant access credentials you can issue and revoke remotely.</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏪</div>
+        <h3>Retail & Dealerships</h3>
+        <p>Point-of-sale camera coverage, lot monitoring with LPR cameras, after-hours intrusion detection, and parts department access control.</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏫</div>
+        <h3>Schools & Churches</h3>
+        <p>Entrance buzzer systems, campus-wide camera coverage, classroom and hallway monitoring, and lockdown-capable access control on exterior doors.</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏗️</div>
+        <h3>Construction & Job Sites</h3>
+        <p>Temporary camera deployments for theft prevention, equipment monitoring, and time-lapse documentation. Relocatable systems that move with the project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-tag">Our Work</div>
+    <h2>Recent Projects</h2>
+    <div class="projects-grid">
+      <div class="project-placeholder">
+        <div class="project-placeholder-icon">📷</div>
+        <p>Project photos coming soon. We document every install with professional before-and-after photos showcasing clean cable management, professional camera placement, and organized rack work.</p>
+      </div>
+    </div>
+    <p class="projects-cta">Have a project in mind? <a href="#contact" style="color: var(--accent); text-decoration: none;">Let's talk about it →</a></p>
   </div>
 </section>
 
@@ -1126,7 +1346,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.service-card, .why-item, .compliance-inner').forEach(el => {
+document.querySelectorAll('.service-card, .why-item, .compliance-inner, .process-step, .industry-card, .project-placeholder').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
