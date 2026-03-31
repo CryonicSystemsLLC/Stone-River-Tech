@@ -282,6 +282,15 @@ nav .container {
 }
 .hero h1 .accent { color: var(--accent); }
 .hero h1 .line { display: block; }
+.hero-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease 0.15s both;
+}
 .hero-sub {
   font-size: 1.15rem;
   color: var(--text-secondary);
@@ -886,7 +895,7 @@ footer .container {
 <!-- NAV -->
 <nav>
   <div class="container">
-    <a href="#" class="nav-logo">stone<span>river</span>tech</a>
+    <a href="#" class="nav-logo">stone <span>river</span> tech</a>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -908,8 +917,9 @@ footer .container {
         <span class="line">Commercial Security</span>
         <span class="line">& Low Voltage <span class="accent">Solutions.</span></span>
       </h1>
+      <p class="hero-tagline">Low Voltage. High Standards.</p>
       <p class="hero-sub">
-        IP surveillance, access control, structured cabling, and network infrastructure for commercial properties across Michigan. Built right. Configured right. Supported right.
+        IP surveillance, access control, structured cabling, and network infrastructure for commercial properties across Michigan.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Request a Site Survey →</a>
@@ -1128,9 +1138,9 @@ footer .container {
   </div>
 </section>
 
-<!-- RECENT PROJECTS
+<!-- RECENT PROJECTS -->
 <section class="projects" id="projects">
- <div class="container">
+  <div class="container">
     <div class="section-tag">Our Work</div>
     <h2>Recent Projects</h2>
     <div class="projects-grid">
@@ -1141,7 +1151,7 @@ footer .container {
     </div>
     <p class="projects-cta">Have a project in mind? <a href="#contact" style="color: var(--accent); text-decoration: none;">Let's talk about it →</a></p>
   </div>
-</section> -->
+</section>
 
 <!-- SERVICE AREA -->
 <section class="area" id="area">
@@ -1326,7 +1336,7 @@ footer .container {
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-left">© 2026 Stone River Tech — Stone River LLC — Flushing, MI</div>
+    <div class="footer-left">© 2026 Stone River Tech — Low Voltage. High Standards. — Flushing, MI</div>
     <div class="footer-right">
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
