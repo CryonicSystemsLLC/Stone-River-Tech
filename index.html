@@ -111,9 +111,37 @@
   "sameAs": []
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'cuyabra';
+  src: url('/fonts/cuyabra-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'cuyabra';
+  src: url('/fonts/cuyabra-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'cuyabra';
+  src: url('/fonts/cuyabra-oblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'cuyabra';
+  src: url('/fonts/cuyabra-bold-oblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
@@ -133,7 +161,7 @@
   --accent-glow: rgba(42, 92, 255, 0.15);
   --accent-secondary: #00d4aa;
   --accent-warn: #ff6b35;
-  --font-display: 'Outfit', sans-serif;
+  --font-display: 'cuyabra', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -197,12 +225,12 @@ nav .container {
   height: 64px;
 }
 .nav-logo {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-primary);
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 .nav-logo span { color: var(--accent); }
 .nav-links { display: flex; gap: 32px; list-style: none; }
@@ -210,7 +238,7 @@ nav .container {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.02em;
   transition: color 0.2s;
 }
@@ -220,7 +248,7 @@ nav .container {
   color: #fff !important;
   padding: 8px 20px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.2s;
 }
 .nav-cta:hover { background: #3d6fff; transform: translateY(-1px); }
@@ -313,7 +341,7 @@ nav .container {
   padding: 16px 36px;
   background: var(--accent);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
   border: none;
   border-radius: 8px;
@@ -329,7 +357,7 @@ nav .container {
   padding: 16px 36px;
   background: transparent;
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.05rem;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -427,7 +455,7 @@ nav .container {
 }
 .service-card h3 {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 12px;
   letter-spacing: -0.01em;
 }
@@ -481,7 +509,7 @@ nav .container {
 }
 .why-item h3 {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 .why-item p {
@@ -575,7 +603,7 @@ nav .container {
 .area-map svg { width: 100%; height: auto; }
 .area-cities h3 {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 24px;
 }
 .area-col-grid {
@@ -660,7 +688,7 @@ nav .container {
 }
 .process-step h3 {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 .process-step p {
@@ -715,7 +743,7 @@ nav .container {
 .industry-icon { font-size: 1.5rem; margin-bottom: 14px; }
 .industry-card h3 {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 .industry-card p {
@@ -801,7 +829,7 @@ nav .container {
 }
 .contact-row-text .value {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 2px;
 }
 .contact-row-text a {
@@ -896,7 +924,7 @@ footer .container {
 <!-- NAV -->
 <nav>
   <div class="container">
-    <a href="#" class="nav-logo">stone <span>river</span> tech</a>
+    <a href="#" class="nav-logo">Stone <span>River</span> Tech</a>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -916,7 +944,7 @@ footer .container {
     <div class="hero-content">
       <h1>
         <span class="line">Commercial Security</span>
-        <span class="line">& Low Voltage Solutions</span>
+        <span class="line">& Low Voltage Solutions.</span>
       </h1>
       <p class="hero-tagline"><span class="accent">Low Voltage</span> High Standards</p>
       <p class="hero-sub">
@@ -1265,7 +1293,7 @@ footer .container {
             <div class="contact-row-icon">✉️</div>
             <div class="contact-row-text">
               <div class="label">Email</div>
-              <div class="value"><a href="mailto:info@stoneriver.tech">info@stoneriver.tech</a></div>
+              <div class="value"><a href="/cdn-cgi/l/email-protection#f79e999198b78483989992859e819285d98392949f"><span class="__cf_email__" data-cfemail="7c15121a133c0f081312190e150a190e5208191f14">[email&#160;protected]</span></a></div>
             </div>
           </div>
           <div class="contact-row">
@@ -1327,7 +1355,7 @@ footer .container {
           <div style="font-size: 3rem; margin-bottom: 16px;">✓</div>
           <h3 style="font-size: 1.4rem; font-weight: 700; color: #00d4aa; margin-bottom: 12px;">Request Submitted</h3>
           <p style="color: #7a8ba8; font-size: 1rem; max-width: 400px; margin: 0 auto; line-height: 1.6;">Thank you for reaching out. We'll review your project details and get back to you within 24 hours.</p>
-          <p style="color: #4a5a74; font-size: 0.85rem; margin-top: 24px; font-family: 'JetBrains Mono', monospace;">(810) 830-4795 — info@stoneriver.tech</p>
+          <p style="color: #4a5a74; font-size: 0.85rem; margin-top: 24px; font-family: 'JetBrains Mono', monospace;">(810) 830-4795 — <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e58c8b838aa596918a8b80978c938097cb9180868d">[email&#160;protected]</a></p>
         </div>
       </div>
     </div>
@@ -1346,7 +1374,7 @@ footer .container {
 </footer>
 
 <!-- SCROLL ANIMATIONS & MAP -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Scroll animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1527,20 +1555,4 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   border-radius: 4px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  padding: 4px 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-.city-tooltip::before { border-top-color: #2a5cff !important; }
-.leaflet-popup-content-wrapper {
-  background: #141a28;
-  color: #e8ecf4;
-  border: 1px solid #1e2a3e;
-  border-radius: 8px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-}
-.leaflet-popup-tip { background: #141a28; }
-</style>
-
-</body>
-</html>
+  padding: 4p
