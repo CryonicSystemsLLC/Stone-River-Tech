@@ -114,28 +114,28 @@
 <style>
 @font-face {
   font-family: 'cuyabra';
-  src: url('/fonts/cuyabra-regular.otf') format('opentype');
+  src: url('/fonts/cuyabra.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'cuyabra';
-  src: url('/fonts/cuyabra-bold.otf') format('opentype');
+  src: url('/fonts/cuyabra%20bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'cuyabra';
-  src: url('/fonts/cuyabra-oblique.otf') format('opentype');
+  src: url('/fonts/cuyabra%20oblique.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'cuyabra';
-  src: url('/fonts/cuyabra-bold-oblique.otf') format('opentype');
+  src: url('/fonts/cuyabra%20bold%20oblique.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -1293,7 +1293,7 @@ footer .container {
             <div class="contact-row-icon">✉️</div>
             <div class="contact-row-text">
               <div class="label">Email</div>
-              <div class="value"><a href="/cdn-cgi/l/email-protection#f79e999198b78483989992859e819285d98392949f"><span class="__cf_email__" data-cfemail="7c15121a133c0f081312190e150a190e5208191f14">[email&#160;protected]</span></a></div>
+              <div class="value"><a href="mailto:info@stoneriver.tech">info@stoneriver.tech</a></div>
             </div>
           </div>
           <div class="contact-row">
@@ -1355,7 +1355,7 @@ footer .container {
           <div style="font-size: 3rem; margin-bottom: 16px;">✓</div>
           <h3 style="font-size: 1.4rem; font-weight: 700; color: #00d4aa; margin-bottom: 12px;">Request Submitted</h3>
           <p style="color: #7a8ba8; font-size: 1rem; max-width: 400px; margin: 0 auto; line-height: 1.6;">Thank you for reaching out. We'll review your project details and get back to you within 24 hours.</p>
-          <p style="color: #4a5a74; font-size: 0.85rem; margin-top: 24px; font-family: 'JetBrains Mono', monospace;">(810) 830-4795 — <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e58c8b838aa596918a8b80978c938097cb9180868d">[email&#160;protected]</a></p>
+          <p style="color: #4a5a74; font-size: 0.85rem; margin-top: 24px; font-family: 'JetBrains Mono', monospace;">(810) 830-4795 — info@stoneriver.tech</p>
         </div>
       </div>
     </div>
@@ -1374,7 +1374,7 @@ footer .container {
 </footer>
 
 <!-- SCROLL ANIMATIONS & MAP -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Scroll animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1555,4 +1555,20 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   border-radius: 4px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  padding: 4p
+  padding: 4px 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.city-tooltip::before { border-top-color: #2a5cff !important; }
+.leaflet-popup-content-wrapper {
+  background: #141a28;
+  color: #e8ecf4;
+  border: 1px solid #1e2a3e;
+  border-radius: 8px;
+  font-family: 'cuyabra', sans-serif;
+  font-size: 13px;
+}
+.leaflet-popup-tip { background: #141a28; }
+</style>
+
+</body>
+</html>
