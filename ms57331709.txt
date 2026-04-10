@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "StoneRiver.tech",
+  "Id": "c4ca4d5b-919b-485e-a3bb-54f9e6fa8543"
+}
